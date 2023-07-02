@@ -21,7 +21,7 @@ public class UpdateDemo {
             Item i1 = session.find(Item.class, 5);
 
             session.detach(i1); //persistence -> detached
-            session.clear();    //persistence -> detached
+//            session.clear();    //persistence -> detached
 
             i1.setDescription("Pepsi");
             session.merge(i1);  //detached -> persistence

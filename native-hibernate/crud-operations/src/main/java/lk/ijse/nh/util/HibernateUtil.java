@@ -5,6 +5,7 @@ package lk.ijse.nh.util;
     @created 7/2/23 - 1:40 PM   
 */
 
+import lk.ijse.nh.entity.Item;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -23,6 +24,7 @@ public class HibernateUtil {
                 .build();
 
         Metadata metadata = new MetadataSources(standardRegistry)
+                .addAnnotatedClass(Item.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

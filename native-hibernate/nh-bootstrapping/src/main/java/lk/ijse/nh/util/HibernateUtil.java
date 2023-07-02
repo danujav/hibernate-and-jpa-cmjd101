@@ -16,6 +16,7 @@ public class HibernateUtil {    //SessionFactory
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
     private static SessionFactory buildSessionFactory() {
+//        3.1.4
         StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
                 .configure("")
                 .build();

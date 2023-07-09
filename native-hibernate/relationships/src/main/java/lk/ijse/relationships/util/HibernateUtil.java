@@ -27,8 +27,8 @@ public class HibernateUtil {    //SessionFactory
 
         Metadata metadata = new MetadataSources(standardRegistry)
 //                .addAnnotatedClass(Employee.class)
-                .addAnnotatedClass(Passenger.class)
                 .addAnnotatedClass(Passport.class)
+                .addAnnotatedClass(Passenger.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

@@ -6,9 +6,15 @@ package lk.ijse.relationships.entity;
 */
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "passport")
 public class Passport {
@@ -16,7 +22,7 @@ public class Passport {
     @Column(name = "passport_number")
     private String pNumber;
     @Column(name = "issue_date", nullable = false)
-    private Date issueDate;     //yyyy-MM-dd
+    private String issueDate;     //yyyy-MM-dd
 
     @OneToOne
     @JoinColumn(name = "passenger_id", nullable = false, referencedColumnName = "passenger_id")

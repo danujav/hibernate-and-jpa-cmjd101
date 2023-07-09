@@ -24,4 +24,9 @@ public class Passenger {
     private String name;
     @Column(nullable = false)
     private String country;
+
+    public Passenger(String name, String country) {
+        this.name = name;
+        this.country = country;
+    }
 }

@@ -26,4 +26,9 @@ public class Owner {
 
     @OneToMany(mappedBy = "owner")
     private List<Pet> petList = new ArrayList<>();
+
+    public Owner(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

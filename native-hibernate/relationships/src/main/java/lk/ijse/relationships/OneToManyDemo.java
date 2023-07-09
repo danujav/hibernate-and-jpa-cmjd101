@@ -5,8 +5,10 @@ package lk.ijse.relationships;
     @created 7/9/23 - 9:11 AM   
 */
 
+import lk.ijse.relationships.entity.Owner;
 import lk.ijse.relationships.entity.Passenger;
 import lk.ijse.relationships.entity.Passport;
+import lk.ijse.relationships.entity.Pet;
 import lk.ijse.relationships.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,7 +21,26 @@ public class OneToManyDemo {
 
             Transaction transaction = session.beginTransaction();
 
+           /* Owner oshada = new Owner(2l, "Sandun");
 
+            Pet tommy = new Pet(1l, "Tommy", oshada);
+            Pet sisi = new Pet(2l, "Sisi", oshada);
+
+            oshada.getPetList().add(tommy);
+            oshada.getPetList().add(sisi);
+
+            session.persist(oshada);
+            session.persist(tommy);
+            session.persist(sisi);*/
+
+            Owner sandun = new Owner(2l, "Sandun");
+
+            Pet rabbit = new Pet(3l, "Rabbit", sandun);
+
+            sandun.getPetList().add(rabbit);
+
+            session.persist(sandun);
+            session.persist(rabbit);
 
             transaction.commit();
 

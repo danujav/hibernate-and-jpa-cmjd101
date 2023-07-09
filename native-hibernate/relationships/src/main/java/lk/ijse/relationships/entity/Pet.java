@@ -23,5 +23,10 @@ public class Pet {
     private String name;
 
     @ManyToOne
+    @JoinColumn (
+            name = "owner_id",
+            nullable = false,
+            referencedColumnName = "id"
+    )
     private Owner owner;
 }

@@ -32,4 +32,9 @@ public class Module {
             inverseJoinColumns = @JoinColumn(name = "lecturer_id", nullable = false, referencedColumnName = "lecturer_id")
     )
     private List<Lecturer> lecturerList = new ArrayList<>();
+
+    public Module(String code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 }

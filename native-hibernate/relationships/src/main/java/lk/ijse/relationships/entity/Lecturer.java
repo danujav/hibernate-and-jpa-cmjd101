@@ -27,4 +27,9 @@ public class Lecturer {
 
     @ManyToMany (mappedBy = "lecturerList")
     private List<Module> moduleList = new ArrayList<>();
+
+    public Lecturer(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

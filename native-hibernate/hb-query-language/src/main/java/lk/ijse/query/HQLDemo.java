@@ -29,12 +29,19 @@ public class HQLDemo {
                 System.out.println(customer);
             }*/
 
-            String hql = "select name from Customer";   // name -> property | Customer -> entity
+            /*String hql = "select name from Customer";   // name -> property | Customer -> entity
             Query query = session.createQuery(hql);
             List<String> list = query.list();
 
             for (String name : list) {
                 System.out.println(name);
+            }*/
+
+            String hql = "from Customer where salary >= 20000";
+            List<Customer> list = session.createQuery(hql).list();
+
+            for (Customer customer : list) {
+                System.out.println(customer);
             }
 
             transaction.commit();

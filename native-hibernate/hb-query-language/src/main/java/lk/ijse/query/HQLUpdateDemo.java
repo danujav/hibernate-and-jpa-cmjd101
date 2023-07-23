@@ -15,26 +15,22 @@ import org.hibernate.query.Query;
 import java.util.List;
 import java.util.Scanner;
 
-public class HQLNameParameterDemo {
+public class HQLUpdateDemo {
     public static void main(String[] args) {
 
         try (SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
              Session session = sessionFactory.openSession();) {
             Transaction transaction = session.beginTransaction();
 
-            System.out.print("Input customer name for search: ");
-            String name = new Scanner(System.in).next();
-
-            String hql = "from Customer where name = :customerName";
+            double incrementValue = 10000;
+            String hql = "update Customer set salary = (salary + :data) where address = 'Panadura'";
 
             Query query = session.createQuery(hql);
-            query.setParameter("customerName", name);
+            query.setParameter("data", incrementValue);
 
-            List<Customer> list = query.list();
-
-            for (Customer customer : list) {
-                System.out.println(customer);
-            }
+            int affectedRow = query.executeUpdate();
+            if(affectedRow > 0) System.out.println("salary updated");
+            else System.out.println("not updated");
 
             transaction.commit();
 

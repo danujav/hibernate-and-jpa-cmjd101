@@ -21,7 +21,8 @@ public class HQLDemo {
              Session session = sessionFactory.openSession();) {
             Transaction transaction = session.beginTransaction();
 
-/*            String hql = "from Customer";   //Customer -> Entity
+            //select * from
+            /*String hql = "from Customer";   //Customer -> Entity
             Query query = session.createQuery(hql);
             List<Customer> list = query.list();
 
@@ -29,6 +30,7 @@ public class HQLDemo {
                 System.out.println(customer);
             }*/
 
+            //select a specified column
             /*String hql = "select name from Customer";   // name -> property | Customer -> entity
             Query query = session.createQuery(hql);
             List<String> list = query.list();
@@ -37,6 +39,7 @@ public class HQLDemo {
                 System.out.println(name);
             }*/
 
+            //where clause
             String hql = "from Customer where salary >= 20000";
             List<Customer> list = session.createQuery(hql).list();
 

@@ -40,7 +40,23 @@ public class HQLDemo {
             }*/
 
             //where clause
-            String hql = "from Customer where salary >= 20000";
+            /*String hql = "from Customer where salary >= 20000";
+            List<Customer> list = session.createQuery(hql).list();
+
+            for (Customer customer : list) {
+                System.out.println(customer);
+            }*/
+
+            //LIKE
+            /*String hql = "from Customer where name like 'S%'";
+            List<Customer> list = session.createQuery(hql).list();
+
+            for (Customer customer : list) {
+                System.out.println(customer);
+            }*/
+
+            //ORDER BY
+            String hql = "from Customer order by salary asc";
             List<Customer> list = session.createQuery(hql).list();
 
             for (Customer customer : list) {

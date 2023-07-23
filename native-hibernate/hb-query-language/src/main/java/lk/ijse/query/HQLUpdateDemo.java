@@ -23,7 +23,7 @@ public class HQLUpdateDemo {
             Transaction transaction = session.beginTransaction();
 
             double incrementValue = 10000;
-            String hql = "update Customer set salary = (salary + :data) where address = 'Panadura'";
+            String hql = "update CustomerDetail set salary = (salary + :data) where address = 'Panadura'";
 
             Query query = session.createQuery(hql);
             query.setParameter("data", incrementValue);

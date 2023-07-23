@@ -13,6 +13,7 @@
         <module>crud-operations</module>
         <module>relationships</module>
         <module>javafx-hibernate</module>
+        <module>hb-query-language</module>
     </modules>
 
     <properties>
